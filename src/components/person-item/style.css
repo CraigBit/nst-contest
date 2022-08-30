@@ -111,17 +111,20 @@
   .person__image img {
     display: none;
   }
+
   .controls__body {
     display: flex;
     height: 25px;
     width: 50px;
     overflow: hidden;
   }
+
   .controls__body-edit {
     border-radius: 5px 0 0 5px;
     border: 1px solid rgb(200, 158, 22);
     background: url('../../img/black-pencil-small.jpg') center no-repeat;
   }
+
   .controls__body-delete {
     border-radius: 0 5px 5px 0;
     border: 1px solid rgb(226, 76, 2);
