@@ -1,0 +1,17 @@
+.add-person {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Times New Roman', Times, serif;
+
+  border-radius: 5px;
+  margin-top: 25px;
+  padding: 10px 7px;
+  background-color: rgb(60, 0, 255);
+  color: white;
+}
+
+@media (max-width: 420px) {
+  .add-person {
+    margin-top: 15px;
+  }
+}

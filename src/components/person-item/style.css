@@ -1,0 +1,137 @@
+.person {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 25px;
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid black;
+}
+
+.person__image {
+  margin-right: 30px;
+}
+
+.person__image img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.person__body {
+  margin-left: 30px;
+}
+
+.body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 100%;
+}
+
+.body__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 53%;
+}
+
+.body__info-name {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 65.5%;
+}
+
+.body__info-surname {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 24%;
+}
+
+.person__controls {
+  display: flex;
+  justify-content: flex-end;
+  margin: -20px 0px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 60%;
+}
+
+.controls__body {
+  display: flex;
+  height: 50px;
+  width: 100px;
+  overflow: hidden;
+}
+
+.controls__body-edit {
+  width: 51%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+  border: 2px solid rgb(200, 158, 22);
+  background: url('../../img/black-pencil.jpg') center no-repeat;
+  cursor: pointer;
+}
+
+.controls__body-delete {
+  width: 50%;
+  height: 100%;
+  border-radius: 0 10px 10px 0;
+  border: 2px solid rgb(226, 76, 2);
+  border-left: none;
+  background: url('../../img/black-cross.jpg') center no-repeat;
+  cursor: pointer;
+}
+
+.controls__body-edit:hover,
+.controls__body-delete:hover {
+  opacity: 0.9;
+}
+
+.controls__body-edit:active,
+.controls__body-delete:active {
+  opacity: 0.7;
+}
+
+@media (max-width: 576px) {
+  .person__image {
+    margin-right: 0;
+  }
+
+  .person__body {
+    margin-left: 0;
+  }
+
+  .person__image img {
+    display: none;
+  }
+  .controls__body {
+    display: flex;
+    height: 25px;
+    width: 50px;
+    overflow: hidden;
+  }
+  .controls__body-edit {
+    border-radius: 5px 0 0 5px;
+    border: 1px solid rgb(200, 158, 22);
+    background: url('../../img/black-pencil-small.jpg') center no-repeat;
+  }
+  .controls__body-delete {
+    border-radius: 0 5px 5px 0;
+    border: 1px solid rgb(226, 76, 2);
+    background: url('../../img/black-cross-small.jpg') center no-repeat;
+  }
+}
+
+@media (max-width: 420px) {
+  .person {
+    padding: 15px 10px;
+    font-size: 16px;
+  }
+}

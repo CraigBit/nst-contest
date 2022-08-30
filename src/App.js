@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { PersonAdd } from './components/person-add/person-add.js';
+import { PersonItem } from './components/person-item/person-item.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className='header'>
+        <div className='container'>
+          <div className='description'>
+            <div className='description__name'>Имя</div>
+            <div className='description__surname'>Фамилия</div>
+          </div>
+        </div>
       </header>
-    </div>
+      <main className='main'>
+        <div className='container'>
+          <PersonItem />
+          <PersonAdd />
+        </div>
+      </main>
+    </>
   );
 }
 
