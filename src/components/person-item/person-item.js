@@ -1,7 +1,7 @@
 import './style.css';
 import avatarPlaceholder from '../../img/avatar-placeholder.jpg';
 
-export const PersonItem = () => {
+export const PersonItem = ({ person, onEdit, onDelete }) => {
   return (
     <div className='person'>
       <div className='person__image'>
@@ -9,13 +9,19 @@ export const PersonItem = () => {
       </div>
       <div className='person__body body'>
         <div className='body__info'>
-          <div className='body__info-name'>John</div>
-          <div className='body__info-surname'>Boo</div>
+          <div className='body__info-firstname'>{person.firstName}</div>
+          <div className='body__info-lastname'>{person.lastName}</div>
         </div>
-        <div className='person__controls controls'>
-          <div className='controls__body'>
-            <div className='controls__body-edit'></div>
-            <div className='controls__body-delete'></div>
+        <div className='body__controls controls'>
+          <div className='controls__buttons'>
+            <div
+              onClick={() =>
+                onEdit(person.id, person.firstName, person.lastName)
+              }
+              className='controls__buttons-edit'></div>
+            <div
+              onClick={() => onDelete(person.id)}
+              className='controls__buttons-delete'></div>
           </div>
         </div>
       </div>

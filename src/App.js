@@ -1,8 +1,6 @@
 import './App.css';
 import { PersonTable } from './components/person-table/person-table.js';
-import { PersonAdd } from './components/person-add/person-add.js';
-import { PersonItem } from './components/person-item/person-item.js';
-import { PersonModal } from './components/person-modal/person-modal.js';
+import { PersonBlock } from './blocks/person-block.js';
 import { Toast } from './components/toast/toast.js';
 import checkIcon from './img/toast/check.svg';
 import errorIcon from './img/toast/error.svg';
@@ -45,18 +43,10 @@ function App() {
     <>
       <header className='header'>
         {/* <Toast toastList={TOAST_LIST} position='top-right' /> */}
-        <div className='container'>
-          <PersonTable />
-        </div>
+        <PersonTable />
       </header>
       <main className='main'>
-        <div className='container'>
-          <PersonItem />
-          <PersonItem />
-          <PersonItem />
-          <PersonAdd />
-        </div>
-        <PersonModal head='Создание сотрудника' />
+        <PersonBlock />
       </main>
     </>
   );

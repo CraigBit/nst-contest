@@ -39,38 +39,38 @@
   align-items: center;
   flex-grow: 1;
   flex-shrink: 1;
-  flex-basis: 53%;
+  flex-basis: 80%;
 }
 
-.body__info-name {
+.body__info-firstname {
   flex-grow: 1;
   flex-shrink: 1;
-  flex-basis: 65.5%;
+  flex-basis: 41%;
 }
 
-.body__info-surname {
+.body__info-lastname {
   flex-grow: 1;
   flex-shrink: 1;
-  flex-basis: 24%;
+  flex-basis: 59%;
 }
 
-.person__controls {
+.body__controls {
   display: flex;
   justify-content: flex-end;
   margin: -20px 0px;
   flex-grow: 1;
   flex-shrink: 1;
-  flex-basis: 60%;
+  flex-basis: 20%;
 }
 
-.controls__body {
+.controls__buttons {
   display: flex;
   height: 50px;
   width: 100px;
   overflow: hidden;
 }
 
-.controls__body-edit {
+.controls__buttons-edit {
   width: 51%;
   height: 100%;
   border-radius: 10px 0 0 10px;
@@ -79,7 +79,7 @@
   cursor: pointer;
 }
 
-.controls__body-delete {
+.controls__buttons-delete {
   width: 50%;
   height: 100%;
   border-radius: 0 10px 10px 0;
@@ -89,13 +89,13 @@
   cursor: pointer;
 }
 
-.controls__body-edit:hover,
-.controls__body-delete:hover {
+.controls__buttons-edit:hover,
+.controls__buttons-delete:hover {
   opacity: 0.9;
 }
 
-.controls__body-edit:active,
-.controls__body-delete:active {
+.controls__buttons-edit:active,
+.controls__buttons-delete:active {
   opacity: 0.7;
 }
 
@@ -112,20 +112,20 @@
     display: none;
   }
 
-  .controls__body {
+  .controls__buttons {
     display: flex;
     height: 25px;
     width: 50px;
     overflow: hidden;
   }
 
-  .controls__body-edit {
+  .controls__buttons-edit {
     border-radius: 5px 0 0 5px;
     border: 1px solid rgb(200, 158, 22);
     background: url('../../img/black-pencil-small.jpg') center no-repeat;
   }
 
-  .controls__body-delete {
+  .controls__buttons-delete {
     border-radius: 0 5px 5px 0;
     border: 1px solid rgb(226, 76, 2);
     background: url('../../img/black-cross-small.jpg') center no-repeat;

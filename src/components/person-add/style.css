@@ -18,6 +18,11 @@
   color: rgb(60, 0, 255);
 }
 
+.person-add:active {
+  background-color: rgb(60, 0, 255);
+  color: white;
+}
+
 @media (max-width: 420px) {
   .person-add {
     margin-top: 15px;
