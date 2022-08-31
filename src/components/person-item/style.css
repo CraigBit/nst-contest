@@ -11,13 +11,13 @@
 
 .person__image {
   margin-right: 30px;
-}
-
-.person__image img {
   width: 35px;
   height: 35px;
+  background-image: url('../../img/person/avatar-placeholder.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   border-radius: 50%;
-  object-fit: cover;
 }
 
 .person__body {
@@ -116,7 +116,7 @@
     flex-basis: 45%;
   }
 
-  .person__image img {
+  .person__image {
     display: none;
   }
 

@@ -26,9 +26,9 @@ function App() {
         <ToastList toasts={toasts} setToasts={setToasts} position='top-left' />
         <PersonTable />
       </header>
-      <main className='main'>
+      <div className='main'>
         <PersonBlock showToast={showToast} />
-      </main>
+      </div>
     </>
   );
 }

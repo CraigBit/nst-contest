@@ -1,12 +1,9 @@
 import './style.css';
-import avatarPlaceholder from '../../img/person/avatar-placeholder.jpg';
 
 export const PersonItem = ({ person, onEdit, onDelete }) => {
   return (
     <div className='person'>
-      <div className='person__image'>
-        <img src={avatarPlaceholder} alt='not found' />
-      </div>
+      <div className='person__image' />
       <div className='person__body body'>
         <div className='body__info'>
           <div className='body__info-firstname'>{person.firstName}</div>
