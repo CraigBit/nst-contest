@@ -92,7 +92,6 @@
 
 .person-modal__save:hover {
   transition: all 0.3s ease;
-  /* outline: 1px solid rgb(60, 0, 255); */
   background-color: white;
   color: rgb(60, 0, 255);
   box-shadow: 0px 0px 0px 0.5px rgb(60, 0, 255);
