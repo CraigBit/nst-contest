@@ -1,40 +1,51 @@
 export class PersonService {
-  static async getPersons() {
-    const url = `http://localhost:3001/api/v1/persons`;
-    const response = await fetch(url);
-    const json = await response.json();
-    return json;
-  }
+  _apiBase = 'http://localhost:3001/api/v1';
+  _defaultHeaders = {
+    'Content-Type': 'application/json',
+  };
 
-  static async getPersonsById(id) {
-    const url = `http://localhost:3001/api/v1/person/${id}`;
-    const res = await fetch(url);
-    const json = await res.json();
-    return json;
-  }
-
-  static async createPerson(data) {
-    const url = `http://localhost:3001/api/v1/persons`;
-    await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
+  async request({ url, method = 'GET', headers = {}, ...options }) {
+    const response = await fetch(`${this._apiBase}${url}`, {
+      method,
+      headers: { ...this._defaultHeaders, ...headers },
+      ...options,
     });
+
+    if (!response.ok) {
+      throw new Error('Data fetch error');
+    }
+
+    return await response.json();
   }
 
-  static async editPerson(data, id) {
-    const url = `http://localhost:3001/api/v1/person/${id}`;
-    await fetch(url, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
+  getPersons() {
+    return this.request({ url: `/persons` });
   }
 
-  static async deletePerson(id) {
-    const url = `http://localhost:3001/api/v1/person/${id}`;
-    await fetch(url, {
+  getPerson(id) {
+    return this.request({ url: `/person/${id}` });
+  }
+
+  deletePerson(id) {
+    return this.request({
+      url: `/person/${id}`,
       method: 'DELETE',
+    });
+  }
+
+  createPerson(data) {
+    return this.request({
+      url: `/persons`,
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+  }
+
+  editPerson(data, id) {
+    return this.request({
+      url: `/person/${id}`,
+      method: 'PUT',
+      body: JSON.stringify(data),
     });
   }
 }

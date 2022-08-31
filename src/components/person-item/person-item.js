@@ -1,5 +1,5 @@
 import './style.css';
-import avatarPlaceholder from '../../img/avatar-placeholder.jpg';
+import avatarPlaceholder from '../../img/person/avatar-placeholder.jpg';
 
 export const PersonItem = ({ person, onEdit, onDelete }) => {
   return (

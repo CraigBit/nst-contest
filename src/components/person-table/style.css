@@ -23,13 +23,21 @@
   flex-basis: 67%;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .table {
     padding: 25px;
   }
+
+  .table__name {
+    flex-basis: 43%;
+  }
+
+  .table__surname {
+    flex-basis: 57%;
+  }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 576px) {
   .table {
     padding: 15px 10px;
     font-size: 18px;

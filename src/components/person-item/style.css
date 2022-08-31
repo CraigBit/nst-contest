@@ -75,7 +75,7 @@
   height: 100%;
   border-radius: 10px 0 0 10px;
   border: 2px solid rgb(200, 158, 22);
-  background: url('../../img/black-pencil.jpg') center no-repeat;
+  background: url('../../img/person/black-pencil.jpg') center no-repeat;
   cursor: pointer;
 }
 
@@ -85,7 +85,7 @@
   border-radius: 0 10px 10px 0;
   border: 2px solid rgb(226, 76, 2);
   border-left: none;
-  background: url('../../img/black-cross.jpg') center no-repeat;
+  background: url('../../img/person/black-cross.jpg') center no-repeat;
   cursor: pointer;
 }
 
@@ -99,13 +99,21 @@
   opacity: 0.7;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .person__image {
     margin-right: 0;
   }
 
   .person__body {
     margin-left: 0;
+  }
+
+  .body__info-firstname {
+    flex-basis: 55%;
+  }
+
+  .body__info-lastname {
+    flex-basis: 45%;
   }
 
   .person__image img {
@@ -122,17 +130,17 @@
   .controls__buttons-edit {
     border-radius: 5px 0 0 5px;
     border: 1px solid rgb(200, 158, 22);
-    background: url('../../img/black-pencil-small.jpg') center no-repeat;
+    background: url('../../img/person/black-pencil-small.jpg') center no-repeat;
   }
 
   .controls__buttons-delete {
     border-radius: 0 5px 5px 0;
     border: 1px solid rgb(226, 76, 2);
-    background: url('../../img/black-cross-small.jpg') center no-repeat;
+    background: url('../../img/person/black-cross-small.jpg') center no-repeat;
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 576px) {
   .person {
     padding: 15px 10px;
     font-size: 16px;

@@ -1,36 +1,48 @@
 import { useEffect, useState } from 'react';
+import { Spinner } from '../spinner/spinner.js';
 import './style.css';
 
 export const PersonModal = ({ onClose, onServer, head, ...props }) => {
+  const [loading, setLoading] = useState(false);
   const [personData, setPersonData] = useState({
     firstName: '',
     lastName: '',
   });
 
-  const fetchData = async () => {
-    let url = `http://localhost:3001/api/v1/person/${props.personId}`;
-    const res = await fetch(url);
-    const json = await res.json();
-    const firstName = await json.firstName;
-    const lastName = await json.lastName;
-    setPersonData({ ...personData, firstName: firstName, lastName: lastName });
+  const fetchPerson = async () => {
+    try {
+      setLoading(true);
+      const res = await props.onGetPerson();
+      setPersonData({
+        ...personData,
+        firstName: res.firstName,
+        lastName: res.lastName,
+      });
+      setLoading(false);
+    } catch {
+      return;
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
-    if (props.personId) {
-      fetchData();
+    if (props.onGetPerson) {
+      fetchPerson();
     }
-  }, [props.personId]);
+  }, []);
 
-  const callbacks = {
+  const CALLBACKS = {
+    // отправка формы
     onSubmit: async (e) => {
       e.preventDefault();
-      await onServer(personData, props.personId);
-      setPersonData({ firstName: '', lastName: '' });
+      await onServer(personData);
     },
+    // изменение имени
     onFirstNameChange: (e) => {
       setPersonData({ ...personData, firstName: e.target.value });
     },
+    // изменение фамилии
     onLastNameChange: (e) => {
       setPersonData({ ...personData, lastName: e.target.value });
     },
@@ -44,29 +56,34 @@ export const PersonModal = ({ onClose, onServer, head, ...props }) => {
           <div onClick={onClose} className='person-modal__back'>
             Назад к списку
           </div>
-          <form
-            onSubmit={callbacks.onSubmit}
-            className='person-modal__form modal-form'>
-            <input
-              className='modal-form__field'
-              type='text'
-              placeholder='Введите имя сотрудника'
-              value={personData.firstName}
-              onChange={callbacks.onFirstNameChange}
-              required={true}
-            />
-            <input
-              className='modal-form__field'
-              type='text'
-              placeholder='Введите фамилию сотрудника'
-              value={personData.lastName}
-              onChange={callbacks.onLastNameChange}
-              required={true}
-            />
-            <button className='person-modal__save' type='submit'>
-              Сохранить
-            </button>
-          </form>
+          <Spinner
+            active={loading}
+            view='spinner'
+            className='person-modal__spinner'>
+            <form
+              onSubmit={CALLBACKS.onSubmit}
+              className='person-modal__form modal-form'>
+              <input
+                className='modal-form__field'
+                type='text'
+                placeholder='Введите имя сотрудника'
+                value={personData.firstName}
+                onChange={CALLBACKS.onFirstNameChange}
+                required={true}
+              />
+              <input
+                className='modal-form__field'
+                type='text'
+                placeholder='Введите фамилию сотрудника'
+                value={personData.lastName}
+                onChange={CALLBACKS.onLastNameChange}
+                required={true}
+              />
+              <button className='person-modal__save' type='submit'>
+                Сохранить
+              </button>
+            </form>
+          </Spinner>
         </div>
       </div>
     </div>

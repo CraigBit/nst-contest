@@ -1,12 +1,12 @@
 .person-add {
   margin-top: 25px;
-  padding: 10px 7px;
+  padding: 15px 12px;
   border-radius: 5px;
   background-color: rgb(60, 0, 255);
   cursor: pointer;
 
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 500;
   font-family: 'Times New Roman', Times, serif;
   color: white;
 }
@@ -23,8 +23,11 @@
   color: white;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 576px) {
   .person-add {
+    padding: 10px 7px;
+    font-size: 14px;
+    font-weight: 400;
     margin-top: 15px;
   }
 }

@@ -56,6 +56,10 @@
   flex-direction: column;
 }
 
+.spinner {
+  margin: 0 auto 20px auto;
+}
+
 .modal-form__field {
   margin-bottom: 15px;
   padding: 7px 3px;
